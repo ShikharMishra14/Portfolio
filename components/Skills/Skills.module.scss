@@ -1,0 +1,53 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.skills {
+  @include section-base;
+  background: $bg-secondary;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  @include card-base;
+  border-radius: $radius-lg;
+  padding: 1.75rem;
+
+  &:hover {
+    transform: translateY(-3px);
+  }
+}
+
+.cardTitle {
+  @include mono-label;
+  color: $accent-green;
+  margin-bottom: 1.25rem;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  font-family: $font-mono;
+  font-size: 0.8rem;
+  color: $text-primary;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid $border;
+  padding: 0.35rem 0.85rem;
+  border-radius: $radius-sm;
+  cursor: default;
+  transition: all 0.2s;
+
+  &:hover {
+    background: rgba(110, 240, 200, 0.08);
+    border-color: rgba(110, 240, 200, 0.2);
+    color: $accent-green;
+  }
+}
